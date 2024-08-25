@@ -6,12 +6,12 @@ export default function Counter() {
 
     const [count, setCount] = useState(0);
 
-    function incrCounterParentFunction(by) {
-        setCount(count + by);
+    function incrCounterParentFunction(byValue) {
+        setCount(count + byValue);
     }
 
-    function decrCounterParentFunction(by) {
-        setCount(count - by);
+    function decrCounterParentFunction(byValue) {
+        setCount(count - byValue);
     }
 
     function resetCounter() {
@@ -21,13 +21,13 @@ export default function Counter() {
     return (
         <div>
             <span className="totalCount">{count}</span>
-            <CounterBtn by = {1} 
+            <CounterBtn byValue = {1} 
                 incrMethod={incrCounterParentFunction} 
                 decrMethod={decrCounterParentFunction}/>
-            <CounterBtn by = {3} 
+            <CounterBtn byValue = {3} 
                 incrMethod={incrCounterParentFunction} 
                 decrMethod={decrCounterParentFunction}/>
-            <CounterBtn by = {5} 
+            <CounterBtn byValue = {5} 
                 incrMethod={incrCounterParentFunction} 
                 decrMethod={decrCounterParentFunction}/>
 

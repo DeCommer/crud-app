@@ -1,26 +1,11 @@
-import { useState } from 'react'
 import { PropTypes } from 'prop-types'
 
-export default function CounterBtn({by, incrMethod, decrMethod}) {
-
-    const [count, setCount] = useState(0);
-
-    function incrCounter() {
-        setCount(count + by);
-        incrMethod(by);
-    }
- 
-    function decrCounter() {
-        setCount(count - by);
-        decrMethod(by);
-    }
-
+export default function CounterBtn({byValue, incrMethod, decrMethod}) {
     return (
         <div className="Counter">
-            {/* <span className="count">{count}</span> */}
             <div>
-                <button className="cunterBtn" onClick={decrCounter}>-{by}</button>
-                <button className="cunterBtn" onClick={incrCounter}>+{by}</button>
+                <button className="cunterBtn" onClick={() =>decrMethod(byValue)}>-{byValue}</button>
+                <button className="cunterBtn" onClick={() =>incrMethod(byValue)}>+{byValue}</button>
             </div>
         </div>
     )
