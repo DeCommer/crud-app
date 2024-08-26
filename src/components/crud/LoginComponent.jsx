@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-
 export default function LoginComponenet() { 
+
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
@@ -31,10 +31,10 @@ export default function LoginComponenet() {
         }
     }
     return (
-        <div className='login-main-container'>
-            <div className="login">
+        <div className="login">
+            <div className='login-main-container'>
                 <div className="login-form">
-                        <h2>Login</h2>
+                    <h2>Login</h2>
                     <div>
                         <label>Username</label>
                         <input type="text" name="username" value={username} onChange={handleUsernameChange} />
@@ -47,9 +47,9 @@ export default function LoginComponenet() {
                         <button type="button" name="login" onClick={handleSubmit}>Login</button>
                     </div>
                 </div>
-                {showLoginSuccessMessage && <div className='successMessage'>Authentication successful</div>}
-                {showLoginFailMessage && <div className='errorMessage'><p>Enter valid credentials</p></div>}
             </div>
+            {showLoginSuccessMessage && <div className='successMessage'>Authentication successful</div>}
+            {showLoginFailMessage && <div className='errorMessage'><p>Enter valid credentials</p></div>}
         </div>
     )
 }
