@@ -1,14 +1,14 @@
 import './App.css';
+import CrudApp from './components/crud/CrudApp';
 
 // import Counter from './components/counter/Counter';
-
-import TodoApp from './components/todo/TodoApp';
 
 function App() {
   return (
     <div className="App">
       {/* <UsingProps property1="value1" property2="value2" /> */}
-      <TodoApp />
+      <CrudApp />
+
       {/* <Counter/> */}
     </div>
   );
