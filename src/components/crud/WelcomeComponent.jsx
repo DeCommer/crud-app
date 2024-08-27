@@ -1,6 +1,11 @@
-import {useParams, Link} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom';
+import HomepageComponent from './HomePageComponenet';
+
+
 
 export default function WelcomeComponent() {
+
+
 
     const { username } = useParams();
     console.log(username)
@@ -8,7 +13,7 @@ export default function WelcomeComponent() {
     return (
         <div className="welcome-comp">
             <div>
-                <h1>Welcome, {username}</h1>
+                <HomepageComponent />
                 <p>Manage your list <Link to="/list">here</Link></p>
             </div>
         </div>
