@@ -7,7 +7,6 @@ import axios from 'axios';
 export default function WelcomeComponent() {
 
     function callHelloRestApi() {
-        console.log("called");
         axios.get('http://localhost:8080/hello-world')
             .then((response) => successfulRes(response))
             .catch((error) => errorlRes(error))
