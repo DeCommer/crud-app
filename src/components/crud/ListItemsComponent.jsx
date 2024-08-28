@@ -26,11 +26,11 @@ export default function ListItemsComponent() {
                         {
                             items.map (
                                 item => (
-                                <tr key={item.id}>
-                                    <td>{item.id}</td>
-                                    <td>{item.description}</td>
-                                    <td>{item.isDone.toString()}</td>
-                                    <td>{item.completeBy.toDateString()}</td>
+                                    <tr key={item.id}>
+                                        <td>{item.id}</td>
+                                        <td>{item.description}</td>
+                                        <td>{item.isDone.toString()}</td>
+                                        <td>{item.completeBy.toDateString()}</td>
                                     </tr>
                                 )
                             )

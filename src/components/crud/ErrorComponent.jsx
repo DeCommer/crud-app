@@ -4,7 +4,7 @@ export default function ErrorComponent() {
         <div className="error-comp">
             <div>
                 <h1>404</h1>
-                <p>The page you have landed on does not exist</p>
+                <p>The page you have landed on does not exist on Listicles</p>
             </div>
         </div>
     )

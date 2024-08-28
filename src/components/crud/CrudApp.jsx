@@ -1,8 +1,8 @@
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import AuthProvider, { useAuth } from './security/AuthContext';
 import LoginComponenet from './LoginComponent';
-import LogoutComponent from './LogOutComponent';
-import HomepageComponent from './HomePageComponenet';
+import LogoutComponent from './LogoutComponent';
+import HomepageComponent from './HomePageComponent';
 import HeaderComponent from './HeaderComponent';
 import WelcomeComponent from './WelcomeComponent';
 import ListItemsComponent from './ListItemsComponent';
