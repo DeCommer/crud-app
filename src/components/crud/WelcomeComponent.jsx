@@ -1,13 +1,16 @@
-import {useParams, Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
+import { useState } from 'react';
 import HomepageComponent from './HomePageComponent';
-import axios from 'axios';
-
-
+import { getHelloWorldBean } from './api/HelloWorldAPIService';
 
 export default function WelcomeComponent() {
 
+    const { username } = useParams();
+    console.log(username);
+
+    const [message, setMessage] = useState(null);
     function callHelloRestApi() {
-        axios.get('http://localhost:8080/hello-world')
+        getHelloWorldBean("Joseph")
             .then((response) => successfulRes(response))
             .catch((error) => errorlRes(error))
             .finally(() => console.log("Done"))
@@ -15,14 +18,12 @@ export default function WelcomeComponent() {
 
     function successfulRes(response) {
         console.log(response);
+        setMessage(response.data.message);
     }
     function errorlRes(error) {
         console.log(error);
     }
 
-    const { username } = useParams();
-    console.log(username)
-    // const { password } = useParams();
     return (
         <div className="welcome-comp">
             <div>
@@ -30,8 +31,9 @@ export default function WelcomeComponent() {
                 <p>Manage your list <Link to="/list">here</Link></p>
             </div>
             <div>
-                <button className="btn" onClick={callHelloRestApi}>Hello</button>
+                <button className="btn" onClick={callHelloRestApi}>Message from API</button>
             </div>
+            <div className="text-info">{message}</div>
         </div>
     )
 }

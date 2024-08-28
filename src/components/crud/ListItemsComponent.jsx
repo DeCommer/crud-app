@@ -1,14 +1,19 @@
+import { useEffect, useState } from 'react';
+import { getAllCrudsForUsername } from './api/CrudApiService';
 
 export default function ListItemsComponent() {
-    
-    const today = new Date();
-    const targetDate = new Date(today.getFullYear()+12, today.getMonth(), today.getDay());
 
-    const items = [
-                    {id: 1, description: 'Jack it', isDone: true, completeBy: targetDate},
-                    {id: 2, description: 'Eat', isDone: false, completeBy: targetDate},
-                    {id: 3, description: 'Sleep', isDone: false, completeBy: targetDate}
-                ]
+    const [cruds, setCruds] = useState([]);
+        useEffect (() => refreshCruds(), []);
+
+        function refreshCruds() {
+            getAllCrudsForUsername('Joseph')
+            .then(response =>  {
+                // console.log(response.data)
+                setCruds(response.data)
+            })
+            .catch(error => (error));
+        }
     return (
         <div className="ListTodos-comp">
             <div className='main-container'>
@@ -24,13 +29,13 @@ export default function ListItemsComponent() {
                     </thead>
                     <tbody>
                         {
-                            items.map (
-                                item => (
-                                    <tr key={item.id}>
-                                        <td>{item.id}</td>
-                                        <td>{item.description}</td>
-                                        <td>{item.isDone.toString()}</td>
-                                        <td>{item.completeBy.toDateString()}</td>
+                            cruds.map (
+                                crud => (
+                                    <tr key={crud.id}>
+                                        <td>{crud.id}</td>
+                                        <td>{crud.description}</td>
+                                        <td>{crud.done.toString()}</td>
+                                        <td>{crud.targetDate.toString()}</td>
                                     </tr>
                                 )
                             )
