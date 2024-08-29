@@ -91,7 +91,7 @@ li::before {
 }
 
 table.basic-table {
-    /* border: 1px solid #000000; */
+    border: 1px solid #ccc;
     margin: 0 auto;
     width: 90%;
     text-align: center;
