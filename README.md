@@ -1,5 +1,5 @@
 #Simple frontend Crud React App
-with simple login feattures
+with simple login features
 
 run with npm start
 
